@@ -1,6 +1,6 @@
 
         <div class="form col-md-9">
-            <form method="POST" action="?c=adc&a=ad">
+            <form method="POST" action="?c=cl&a=ad">
                 <div class="form-group">
                     <label for="name">Nome</label>
                     <input name="name" class="form-control">

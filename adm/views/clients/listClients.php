@@ -17,8 +17,8 @@
                 <td><?=$client["email"]?></td>
                 <td><?=$client["telefone"]?></td>  
                 <td><?=$client["endereco"]?></td>
-                <td><a href="?c=adc&a=cg&id=<?=$client["id_cliente"]?>"><button class="button-change">Alterar</button></a></td>
-                <td><a href="?c=adc&a=dl&id=<?=$client["id_cliente"]?>"><button class="button-delete">Excluir</button></a></td>
+                <td><a href="?c=cl&a=cg&id=<?=$client["id_cliente"]?>"><button class="button-change">Alterar</button></a></td>
+                <td><a href="?c=cl&a=dl&id=<?=$client["id_cliente"]?>"><button class="button-delete">Excluir</button></a></td>
             </tr>
         <?php
         }

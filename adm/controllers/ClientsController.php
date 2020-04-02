@@ -18,19 +18,6 @@
             require_once("views/templates/footer.php");
         }
 
-        public function formChange($id) {
-            $this->ClientModel->listClientSelected($id);
-            $result =  $this->ClientModel->getConsult();
-            $arrayClient = array();
-            while ($row = $result->fetch_assoc()) {
-                array_push($arrayClient, $row);
-            }
-            require_once("views/templates/header.php");
-            require_once("views/templates/nav.php");
-            require_once("views/clients/changeClients.php");
-            require_once("views/templates/footer.php");
-        }
-
         public function registerClients() {
             $arrayClient["name"] = $_POST["name"];
             $arrayClient["email"] = $_POST["email"];
@@ -41,8 +28,21 @@
             $this->listClients();
         }
 
-        public function changeData($id) {
-            $arrayClient["id_user"] =  $id;
+
+        public function formChange($id) {
+            $this->ClientModel->listClientSelected($id);
+            $result =  $this->ClientModel->getConsult();
+
+            if ($arrayClient = $result->fetch_assoc()){
+                require_once("views/templates/header.php");
+                require_once("views/templates/nav.php");
+                require_once("views/clients/changeClients.php");
+                require_once("views/templates/footer.php");
+            };
+        }
+
+        public function changeData() {
+            $arrayClient["id_user"] =  $_POST["id"];
             $arrayClient["name"] = $_POST["name"];
             $arrayClient["email"] = $_POST["email"];
             $arrayClient["tel"] = $_POST["tel"];

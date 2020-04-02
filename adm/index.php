@@ -34,7 +34,7 @@ session_start();
                 }
             break;
 
-            case 'lcl':
+            case 'cl':
                 require_once("controllers/ClientsController.php");
                 $Clients = new ClientsController();
                 if(!isset($_GET['a'])) {
@@ -42,25 +42,26 @@ session_start();
                 } else {
                     switch($_REQUEST['a']) {
                         case 'lc': $Clients->listClients();
+                        case 'fa': $Clients->formRegister(); break;
+                        case 'ad': $Clients->registerClients(); break;
+                        case 'cg': $Clients->formChange($_GET['id']); break;
+                        case 'alterar': $Clients->changeData() ; break;
+                        case 'dl': $Clients->deleteData($_GET['id']); break;
                     }
                 }
             break;
 
-            case 'adc' :
+            /*case 'adc' :
                 require_once("controllers/ClientsController.php");
                 $Clients = new ClientsController;
                 if(!isset($_GET['a'])) {
 
                 } else {
                     switch($_REQUEST['a']) {
-                        case 'fa': $Clients->formRegister(); break;
-                        case 'ad': $Clients->registerClients(); break;
-                        case 'cg': $Clients->formChange($_GET['id']); break;
-                        case 'alterar': $Clients->changeData($_GET['id']) ; break;
-                        case 'dl': $Clients->deleteData($_GET['id']); break;
+                        
                     }
                 }
-            break;
+            break;*/
         }
     }
 ?>
