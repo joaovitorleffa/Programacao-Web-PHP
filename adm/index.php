@@ -44,6 +44,23 @@ session_start();
                         case 'lc': $Clients->listClients();
                     }
                 }
+            break;
+
+            case 'adc' :
+                require_once("controllers/ClientsController.php");
+                $Clients = new ClientsController;
+                if(!isset($_GET['a'])) {
+
+                } else {
+                    switch($_REQUEST['a']) {
+                        case 'fa': $Clients->formRegister(); break;
+                        case 'ad': $Clients->registerClients(); break;
+                        case 'cg': $Clients->formChange($_GET['id']); break;
+                        case 'alterar': $Clients->changeData($_GET['id']) ; break;
+                        case 'dl': $Clients->deleteData($_GET['id']); break;
+                    }
+                }
+            break;
         }
     }
 ?>
