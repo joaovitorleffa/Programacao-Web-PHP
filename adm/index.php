@@ -38,7 +38,7 @@ session_start();
                 require_once("controllers/ClientsController.php");
                 $Clients = new ClientsController();
                 if(!isset($_GET['a'])) {
-
+                    $Clients->index();
                 } else {
                     switch($_REQUEST['a']) {
                         case 'lc': $Clients->listClients();
@@ -50,18 +50,6 @@ session_start();
                     }
                 }
             break;
-
-            /*case 'adc' :
-                require_once("controllers/ClientsController.php");
-                $Clients = new ClientsController;
-                if(!isset($_GET['a'])) {
-
-                } else {
-                    switch($_REQUEST['a']) {
-                        
-                    }
-                }
-            break;*/
         }
     }
 ?>

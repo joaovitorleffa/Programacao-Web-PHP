@@ -1,6 +1,7 @@
 <?php
     class ClientsController {
         public function index() {
+            $this->listClients();
         }
 
         public function formRegister() {

@@ -11,6 +11,10 @@
             $this->ClientModel = new ClientsModel();
         }
 
+        public function index() {
+            $this->listClients();
+        }
+
         public function formRegister() {
             require_once("views/templates/header.php");
             require_once("views/templates/nav.php");

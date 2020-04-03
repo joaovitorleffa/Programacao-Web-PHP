@@ -38,16 +38,16 @@
         break;
         case 'c':
           require_once("controllers/ClientsController.php");
-          $cliente = new ClientsController();
+          $Client = new ClientsController();
           if(!isset($_GET['a'])){
-            $cliente ->index();
+            $Client->index();
           } else {
             switch($_REQUEST['a']){
-              case 'cc': $cliente -> formRegister();
+              case 'cc': $Client->formRegister();
               break;
-              case 'cca': $cliente -> registerClient();
+              case 'cca': $Client->registerClient();
               break;
-              case 'lc': $cliente -> listClients();
+              case 'lc': $Client->listClients();
               break;
             }
           }
