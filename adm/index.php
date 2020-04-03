@@ -41,7 +41,7 @@ session_start();
                     $Clients->index();
                 } else {
                     switch($_REQUEST['a']) {
-                        case 'lc': $Clients->listClients();
+                        case 'lc': $Clients->listClients(); break;
                         case 'fa': $Clients->formRegister(); break;
                         case 'ad': $Clients->registerClients(); break;
                         case 'cg': $Clients->formChange($_GET['id']); break;
