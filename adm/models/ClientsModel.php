@@ -16,6 +16,7 @@
                     VALUES ('".$arrayClient['name']."','".$arrayClient['email']."','".
                     $arrayClient['tel']."','".$arrayClient['address']."');";
             $this->conn->query($sql);
+            $this->result = $this->conn->insert_id;
         }
 
         public function changeClients($arrayClient) {

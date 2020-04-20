@@ -19,9 +19,6 @@ header h1 {
 
 nav {
   background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 nav ul {

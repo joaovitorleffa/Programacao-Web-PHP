@@ -1,5 +1,5 @@
 <h2>Cadastro do cliente</h2>
-<table class="table">
+<table class="table col-md-12">
     <tr>
         <td>Nome:</td>
         <td><?= $client['nome'];?></td>

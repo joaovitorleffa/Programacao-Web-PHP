@@ -1,6 +1,6 @@
 
         <div class="form col-md-9">
-            <form method="POST" action="?c=cl&a=ad">
+            <form method="POST" action="?c=cl&a=ad" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Nome</label>
                     <input name="name" class="form-control">
@@ -16,6 +16,10 @@
                 <div class="form-group">
                     <label for="adrress">Endereço</label>
                     <input name="address" class="form-control"> 
+                </div>
+                <div class="form-group">
+                    <label for="img">Imagem</label>
+                    <input type="file" name="img">
                 </div>
                 <input type="submit" value="Cadastrar" class="confirm">
             </form>

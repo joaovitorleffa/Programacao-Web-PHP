@@ -42,7 +42,7 @@ session_start();
                 } else {
                     switch($_REQUEST['a']) {
                         case 'lc': $Clients->listClients(); break;
-                        case 'fa': $Clients->formRegister(); break;
+                        case 'fr': $Clients->formRegister(); break;
                         case 'ad': $Clients->registerClients(); break;
                         case 'cg': $Clients->formChange($_GET['id']); break;
                         case 'alterar': $Clients->changeData() ; break;
@@ -50,6 +50,22 @@ session_start();
                     }
                 }
             break;
+
+            case 'pd':
+                require_once("controllers/ProductsController.php");
+                $Products = new ProductsController();
+                if(!isset($_GET['a'])) {
+                    $Products->index();
+                } else {
+                    switch($_REQUEST['a']) {
+                        case 'lp': $Products->listProducts(); break;
+                        case 'frp': $Products->formRegisterProduct(); break;
+                        case 'cp' : $Products->registerProduct(); break;
+                        case 'cg' : $Products->formChangeProduct($_GET['id']);
+                        case 'alterar' : $Products->changeData(); break;
+                        case 'dl' : $Products->deleteData($_GET['id']); break;
+                    }
+                }
         }
     }
 ?>

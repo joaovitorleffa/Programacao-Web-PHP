@@ -6,7 +6,8 @@
             <td>Email</td>
             <td>Telefone</td>
             <td>Endereço</td>
-            <td>IMG</td>
+            <td>img</td>
+            <td>Ações</td>
         </tr>
         <?php
             foreach($arrayClients as $client){
@@ -17,6 +18,7 @@
                 <td><?=$client["email"]?></td>
                 <td><?=$client["telefone"]?></td>  
                 <td><?=$client["endereco"]?></td>
+                <td><img src="assets/images/<?=$client["id_cliente"]?>.jpg" alt="perfil"></td>
                 <td><a href="?c=cl&a=cg&id=<?=$client["id_cliente"]?>"><button class="button-change">Alterar</button></a></td>
                 <td><a href="?c=cl&a=dl&id=<?=$client["id_cliente"]?>"><button class="button-delete">Excluir</button></a></td>
             </tr>
