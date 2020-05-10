@@ -47,6 +47,10 @@ session_start();
                         case 'cg': $Clients->formChange($_GET['id']); break;
                         case 'alterar': $Clients->changeData() ; break;
                         case 'dl': $Clients->deleteData($_GET['id']); break;
+                        case 'lfc': $Clients->listFilesClient(($_GET['id'])); break;
+                        case 'ufc': $Clients->uploadFilesClient(($_GET['id'])); break;
+                        case 'ufca': $Clients->uploadFilesClientAction(($_GET['id'])); break;
+                        case 'dfc': $Clients->deleteFilesClient(($_GET['id'])); break;
                     }
                 }
             break;
